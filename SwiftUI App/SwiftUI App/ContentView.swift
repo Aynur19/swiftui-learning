@@ -13,7 +13,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            TipCalculator().tabItem {
+            TipCalculatorView().tabItem {
                 Image(systemName: "1.circle").environment(\.symbolVariants, .none)
                 Text("Tip Calculator")
             }
@@ -26,51 +26,6 @@ struct ContentView: View {
             AlertWithActionView().tabItem {
                 Image(systemName: "3.circle")
                 Text("Alert With Action")
-            }
-        }
-    }
-}
-
-
-struct TipCalculator: View {
-    @State private var checkAmount = ""
-    @State private var numberOfPeople = 2
-    @State private var tipPercentage = 0
-    
-    let tipPercentages = [0, 5, 10, 15, 20]
-    
-    var totalPerPerson: Double {
-        let peopleCount = Double(numberOfPeople + 2)
-        let tipSelection = Double(tipPercentages[tipPercentage])
-        let orderAmount = Double(checkAmount) ?? 0
-        
-        let tipValue = orderAmount / 100 * tipSelection
-        let grandTotal = orderAmount + tipValue
-        let amountPerPerson = grandTotal / peopleCount
-        
-        return amountPerPerson
-    }
-    
-    var body: some View {
-        Form {
-            Section {
-                TextField("Amount", text: $checkAmount)
-                Picker("Number of people", selection: $numberOfPeople) {
-                    ForEach(2..<100) {
-                        Text("\($0) people")
-                    }
-                }
-            }
-            Section(header: Text("Сколько чаевых вы хотите оставить?")) {
-                Picker("Tip percentage", selection: $tipPercentage) {
-                    ForEach(0..<tipPercentages.count) {
-                        Text("\(self.tipPercentages[$0])%")
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-            }
-            Section {
-                Text("\(totalPerPerson, specifier: "%.3f")")
             }
         }
     }
