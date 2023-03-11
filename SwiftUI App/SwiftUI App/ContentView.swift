@@ -32,6 +32,11 @@ struct ContentView: View {
                 Image(systemName: "4.circle")
                 Text("Action Sheet")
             }
+            
+            CountryFlagsView().tabItem {
+                Image(systemName: "5.circle")
+                Text("Country Flags")
+            }
         }
     }
 }
