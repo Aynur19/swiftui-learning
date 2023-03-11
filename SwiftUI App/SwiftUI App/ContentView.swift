@@ -9,12 +9,39 @@ import SwiftUI
 
 struct ContentView: View {
     
+    
+    
     var body: some View {
         TabView {
-            TipCalculator()
-            .tabItem {
+            TipCalculator().tabItem {
                 Image(systemName: "1.circle").environment(\.symbolVariants, .none)
-                Text("First")
+                Text("Tip Calculator")
+            }
+            
+            TwoAlerts().tabItem {
+                Image(systemName: "2.circle")
+                Text("Two Alerts")
+            }
+        }
+    }
+}
+
+struct TwoAlerts: View {
+    @State private var showingAlert1 = false
+    @State private var showingAlert2 = false
+    
+    var body: some View {
+        HStack {
+            Button("Show 1") {
+                self.showingAlert1 = true
+            }.alert(isPresented: $showingAlert1) {
+                Alert(title: Text("One"), message: nil, dismissButton: .cancel())
+            }
+            
+            Button("Show 2") {
+                self.showingAlert2 = true
+            }.alert(isPresented: $showingAlert2) {
+                Alert(title: Text("Two"), message: nil, dismissButton: .cancel())
             }
         }
     }
