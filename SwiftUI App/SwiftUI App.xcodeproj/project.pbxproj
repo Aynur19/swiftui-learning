@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		989363E929BCF772000B3CF8 /* AlertWithActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363E829BCF772000B3CF8 /* AlertWithActionView.swift */; };
 		98C9525429BA5CAD007E4063 /* SwiftUI_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C9525329BA5CAD007E4063 /* SwiftUI_AppApp.swift */; };
 		98C9525629BA5CAD007E4063 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C9525529BA5CAD007E4063 /* ContentView.swift */; };
 		98C9525829BA5CB0007E4063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98C9525729BA5CB0007E4063 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		989363E829BCF772000B3CF8 /* AlertWithActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithActionView.swift; sourceTree = "<group>"; };
 		98C9525029BA5CAD007E4063 /* SwiftUI App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C9525329BA5CAD007E4063 /* SwiftUI_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_AppApp.swift; sourceTree = "<group>"; };
 		98C9525529BA5CAD007E4063 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		989363E729BCF72A000B3CF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				989363E829BCF772000B3CF8 /* AlertWithActionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		98C9524729BA5CAD007E4063 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +61,7 @@
 		98C9525229BA5CAD007E4063 /* SwiftUI App */ = {
 			isa = PBXGroup;
 			children = (
+				989363E729BCF72A000B3CF8 /* Views */,
 				98C9525329BA5CAD007E4063 /* SwiftUI_AppApp.swift */,
 				98C9525529BA5CAD007E4063 /* ContentView.swift */,
 				98C9525729BA5CB0007E4063 /* Assets.xcassets */,
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98C9525629BA5CAD007E4063 /* ContentView.swift in Sources */,
+				989363E929BCF772000B3CF8 /* AlertWithActionView.swift in Sources */,
 				98C9525429BA5CAD007E4063 /* SwiftUI_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

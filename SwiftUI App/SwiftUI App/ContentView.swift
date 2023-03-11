@@ -22,6 +22,11 @@ struct ContentView: View {
                 Image(systemName: "2.circle")
                 Text("Two Alerts")
             }
+            
+            AlertWithActionView().tabItem {
+                Image(systemName: "3.circle")
+                Text("Alert With Action")
+            }
         }
     }
 }
