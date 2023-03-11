@@ -10,6 +10,7 @@
 		989363E929BCF772000B3CF8 /* AlertWithActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363E829BCF772000B3CF8 /* AlertWithActionView.swift */; };
 		989363EB29BCFDD2000B3CF8 /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363EA29BCFDD2000B3CF8 /* AlertsView.swift */; };
 		989363ED29BCFE87000B3CF8 /* TipCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363EC29BCFE87000B3CF8 /* TipCalculatorView.swift */; };
+		989363EF29BD027A000B3CF8 /* ActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363EE29BD027A000B3CF8 /* ActionSheetView.swift */; };
 		98C9525429BA5CAD007E4063 /* SwiftUI_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C9525329BA5CAD007E4063 /* SwiftUI_AppApp.swift */; };
 		98C9525629BA5CAD007E4063 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C9525529BA5CAD007E4063 /* ContentView.swift */; };
 		98C9525829BA5CB0007E4063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98C9525729BA5CB0007E4063 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		989363E829BCF772000B3CF8 /* AlertWithActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithActionView.swift; sourceTree = "<group>"; };
 		989363EA29BCFDD2000B3CF8 /* AlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
 		989363EC29BCFE87000B3CF8 /* TipCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorView.swift; sourceTree = "<group>"; };
+		989363EE29BD027A000B3CF8 /* ActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetView.swift; sourceTree = "<group>"; };
 		98C9525029BA5CAD007E4063 /* SwiftUI App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C9525329BA5CAD007E4063 /* SwiftUI_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_AppApp.swift; sourceTree = "<group>"; };
 		98C9525529BA5CAD007E4063 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 				989363E829BCF772000B3CF8 /* AlertWithActionView.swift */,
 				989363EA29BCFDD2000B3CF8 /* AlertsView.swift */,
 				989363EC29BCFE87000B3CF8 /* TipCalculatorView.swift */,
+				989363EE29BD027A000B3CF8 /* ActionSheetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				989363ED29BCFE87000B3CF8 /* TipCalculatorView.swift in Sources */,
 				989363EB29BCFDD2000B3CF8 /* AlertsView.swift in Sources */,
 				989363E929BCF772000B3CF8 /* AlertWithActionView.swift in Sources */,
+				989363EF29BD027A000B3CF8 /* ActionSheetView.swift in Sources */,
 				98C9525429BA5CAD007E4063 /* SwiftUI_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
