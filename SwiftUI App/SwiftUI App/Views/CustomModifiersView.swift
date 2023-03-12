@@ -17,10 +17,21 @@ struct CustomTextModifier: ViewModifier {
     }
 }
 
+
+extension View {
+    func customText() -> some View {
+        self.modifier(CustomTextModifier())
+    }
+}
+
+
 struct CustomModifiersView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .modifier(CustomTextModifier())
+        VStack(spacing: 25) {
+            Text("Hello, World!").modifier(CustomTextModifier())
+            
+            Text("Hello, Swift!").customText()
+        }
     }
 }
 
