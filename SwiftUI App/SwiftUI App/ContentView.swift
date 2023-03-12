@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    
-    
     var body: some View {
         TabView {
             TipCalculatorView().tabItem {
@@ -36,6 +34,11 @@ struct ContentView: View {
             CountryFlagsView().tabItem {
                 Image(systemName: "5.circle")
                 Text("Country Flags")
+            }
+            
+            CustomModifiersView().tabItem {
+                Image(systemName: "6.circle")
+                Text("Modifiers")
             }
         }
     }
