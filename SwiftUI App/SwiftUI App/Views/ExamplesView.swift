@@ -22,6 +22,9 @@ class Example : Identifiable {
 struct ExamplesView: View {
     
     let examplesNL = [
+        Example(title: "Alert", viewType: AlertsView.self),
+        Example(title: "Alert With Action", viewType: AlertWithActionView().self),
+        Example(title: "Action Sheet", viewType: ActionSheetView.self),
         Example(title: "Custom Modifiers", viewType: CustomModifiersView.self),
         Example(title: "Observable Object", viewType: ObservableObjectView.self)
     ]
@@ -32,12 +35,12 @@ struct ExamplesView: View {
             Form {
                 Section(header: Text("Navigation Links")) {
                     List {
-                        ForEach(0..<self.examplesNL.count, id: \.self) {
-                            let example = self.examplesNL[$0]
+                        ForEach(0..<self.examplesNL.count, id: \.self) { i in
+                            let example = self.examplesNL[i]
                             let newView = self.buildView(viewType: example.destinationViewType)
                             
                             NavigationLink(destination: newView) {
-                                Text("\(example.title)")
+                                Text("\(i + 1). \(example.title)")
                             }
                         }
                     }.navigationBarTitle("SwiftUI Examples")
@@ -48,9 +51,12 @@ struct ExamplesView: View {
     
     func buildView(viewType: Any) -> AnyView {
         switch viewType.self {
-            case is CustomModifiersView.Type: return AnyView(CustomModifiersView())
-            case is ObservableObjectView.Type: return AnyView(ObservableObjectView())
-            default: return AnyView(EmptyView())
+        case is CustomModifiersView.Type: return AnyView(CustomModifiersView())
+        case is ObservableObjectView.Type: return AnyView(ObservableObjectView())
+        case is AlertsView.Type: return AnyView(AlertsView())
+        case is AlertWithActionView.Type: return AnyView(AlertWithActionView())
+        case is ActionSheetView.Type: return AnyView(ActionSheetView())
+        default: return AnyView(EmptyView())
         }
     }
 }
