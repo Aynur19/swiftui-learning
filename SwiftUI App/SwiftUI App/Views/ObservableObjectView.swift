@@ -28,6 +28,7 @@ struct ObservableObjectView: View {
                 .padding(.vertical, 12)
         }
     }
+    
 }
 
 struct ObservableObjectView_Previews: PreviewProvider {

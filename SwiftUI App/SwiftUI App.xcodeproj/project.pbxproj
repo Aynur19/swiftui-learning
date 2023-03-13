@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		986E1AAB29BF82CC00FAFE7A /* ObservableObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E1AAA29BF82CC00FAFE7A /* ObservableObjectView.swift */; };
+		9874316C29BF8A0D005FACBF /* ExamplesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9874316B29BF8A0D005FACBF /* ExamplesView.swift */; };
 		989363E929BCF772000B3CF8 /* AlertWithActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363E829BCF772000B3CF8 /* AlertWithActionView.swift */; };
 		989363EB29BCFDD2000B3CF8 /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363EA29BCFDD2000B3CF8 /* AlertsView.swift */; };
 		989363ED29BCFE87000B3CF8 /* TipCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363EC29BCFE87000B3CF8 /* TipCalculatorView.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		986E1AAA29BF82CC00FAFE7A /* ObservableObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectView.swift; sourceTree = "<group>"; };
+		9874316B29BF8A0D005FACBF /* ExamplesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesView.swift; sourceTree = "<group>"; };
 		989363E829BCF772000B3CF8 /* AlertWithActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithActionView.swift; sourceTree = "<group>"; };
 		989363EA29BCFDD2000B3CF8 /* AlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
 		989363EC29BCFE87000B3CF8 /* TipCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				989363F029BD09C3000B3CF8 /* CountryFlagsView.swift */,
 				989363F229BE1816000B3CF8 /* CustomModifiersView.swift */,
 				986E1AAA29BF82CC00FAFE7A /* ObservableObjectView.swift */,
+				9874316B29BF8A0D005FACBF /* ExamplesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98C9525629BA5CAD007E4063 /* ContentView.swift in Sources */,
+				9874316C29BF8A0D005FACBF /* ExamplesView.swift in Sources */,
 				989363ED29BCFE87000B3CF8 /* TipCalculatorView.swift in Sources */,
 				989363EB29BCFDD2000B3CF8 /* AlertsView.swift in Sources */,
 				989363E929BCF772000B3CF8 /* AlertWithActionView.swift in Sources */,
