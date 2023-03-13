@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		986E1AAB29BF82CC00FAFE7A /* ObservableObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986E1AAA29BF82CC00FAFE7A /* ObservableObjectView.swift */; };
 		989363E929BCF772000B3CF8 /* AlertWithActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363E829BCF772000B3CF8 /* AlertWithActionView.swift */; };
 		989363EB29BCFDD2000B3CF8 /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363EA29BCFDD2000B3CF8 /* AlertsView.swift */; };
 		989363ED29BCFE87000B3CF8 /* TipCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363EC29BCFE87000B3CF8 /* TipCalculatorView.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		986E1AAA29BF82CC00FAFE7A /* ObservableObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObjectView.swift; sourceTree = "<group>"; };
 		989363E829BCF772000B3CF8 /* AlertWithActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithActionView.swift; sourceTree = "<group>"; };
 		989363EA29BCFDD2000B3CF8 /* AlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
 		989363EC29BCFE87000B3CF8 /* TipCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 				989363EE29BD027A000B3CF8 /* ActionSheetView.swift */,
 				989363F029BD09C3000B3CF8 /* CountryFlagsView.swift */,
 				989363F229BE1816000B3CF8 /* CustomModifiersView.swift */,
+				986E1AAA29BF82CC00FAFE7A /* ObservableObjectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				989363F129BD09C3000B3CF8 /* CountryFlagsView.swift in Sources */,
 				989363EF29BD027A000B3CF8 /* ActionSheetView.swift in Sources */,
 				98C9525429BA5CAD007E4063 /* SwiftUI_AppApp.swift in Sources */,
+				986E1AAB29BF82CC00FAFE7A /* ObservableObjectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
