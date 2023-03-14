@@ -16,6 +16,7 @@
 		9874317C29C0EA0C005FACBF /* SheetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9874317B29C0EA0C005FACBF /* SheetsView.swift */; };
 		9874317E29C0F540005FACBF /* UserDefaultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9874317D29C0F540005FACBF /* UserDefaultsView.swift */; };
 		9874318029C0F7C2005FACBF /* CustomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9874317F29C0F7C2005FACBF /* CustomSheetView.swift */; };
+		9874318229C1067B005FACBF /* CodableObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9874318129C1067B005FACBF /* CodableObjectView.swift */; };
 		989363E929BCF772000B3CF8 /* AlertWithActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363E829BCF772000B3CF8 /* AlertWithActionView.swift */; };
 		989363EB29BCFDD2000B3CF8 /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363EA29BCFDD2000B3CF8 /* AlertsView.swift */; };
 		989363ED29BCFE87000B3CF8 /* TipCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989363EC29BCFE87000B3CF8 /* TipCalculatorView.swift */; };
@@ -38,6 +39,7 @@
 		9874317B29C0EA0C005FACBF /* SheetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetsView.swift; sourceTree = "<group>"; };
 		9874317D29C0F540005FACBF /* UserDefaultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsView.swift; sourceTree = "<group>"; };
 		9874317F29C0F7C2005FACBF /* CustomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSheetView.swift; sourceTree = "<group>"; };
+		9874318129C1067B005FACBF /* CodableObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableObjectView.swift; sourceTree = "<group>"; };
 		989363E829BCF772000B3CF8 /* AlertWithActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithActionView.swift; sourceTree = "<group>"; };
 		989363EA29BCFDD2000B3CF8 /* AlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
 		989363EC29BCFE87000B3CF8 /* TipCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				9874317929C0E91F005FACBF /* DetailView.swift */,
 				9874317D29C0F540005FACBF /* UserDefaultsView.swift */,
 				9874317F29C0F7C2005FACBF /* CustomSheetView.swift */,
+				9874318129C1067B005FACBF /* CodableObjectView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				9874317E29C0F540005FACBF /* UserDefaultsView.swift in Sources */,
 				9874317A29C0E91F005FACBF /* DetailView.swift in Sources */,
 				9874317729C0E4EE005FACBF /* TabsView.swift in Sources */,
+				9874318229C1067B005FACBF /* CodableObjectView.swift in Sources */,
 				9874317C29C0EA0C005FACBF /* SheetsView.swift in Sources */,
 				989363EB29BCFDD2000B3CF8 /* AlertsView.swift in Sources */,
 				9874317129BFACDE005FACBF /* AppsView.swift in Sources */,

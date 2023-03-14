@@ -10,7 +10,8 @@ import SwiftUI
 struct SheetsView: View {
     let sheets: [(Any, String)] = [
         (DetailView.self, "Detail Sheet View"),
-        (UserDefaultsView.self, "User Defaults Sheet View")
+        (UserDefaultsView.self, "User Defaults Sheet View"),
+        (CodableObjectView.self, "Codable Object Sheet View"),
     ]
     var body: some View {
         NavigationView {

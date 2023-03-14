@@ -37,6 +37,7 @@ struct CustomSheetView: View {
         switch self.sheetViewType {
         case is DetailView.Type: return AnyView(DetailView())
         case is UserDefaultsView.Type: return AnyView(UserDefaultsView())
+        case is CodableObjectView.Type: return AnyView(CodableObjectView())
             
         default: return AnyView(EmptyView())
         }
