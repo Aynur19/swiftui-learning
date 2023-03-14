@@ -29,8 +29,6 @@ class Example : Identifiable {
         case is TipCalculatorView.Type: return AnyView(TipCalculatorView())
         case is CountryFlagsView.Type: return AnyView(CountryFlagsView())
             
-        case is DetailSheetView.Type: return AnyView(DetailSheetView())
-            
         default: return AnyView(EmptyView())
         }
     }

@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct SheetsView: View {
-    let sheets = [
-        Example(title: "Detail Sheet View", viewType: DetailSheetView.self)
+    let sheets: [(Any, String)] = [
+        (DetailView.self, "Detail Sheet View"),
+        (UserDefaultsView.self, "User Defaults Sheet View")
     ]
     var body: some View {
-        ExamplesView(title: "Sheets Views",
-                     sectionHeader: "Examples",
-                     examples: self.sheets)
+        NavigationView {
+            Form {
+                Section(header: Text("Examples")) {
+                    List {
+                        ForEach(0..<self.sheets.count, id: \.self) { i in
+                            let (viewType, title) = self.sheets[i]
+                            
+                            NavigationLink(destination: CustomSheetView(sheetViewType: viewType, title: title)) {
+                                Text("\(i + 1). \(title)")
+                            }
+                        }
+                    }
+                }
+                
+                .navigationTitle("Sheet Views")
+                
+            }
+        }
     }
 }
 
