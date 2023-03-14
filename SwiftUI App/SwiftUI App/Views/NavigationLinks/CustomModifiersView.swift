@@ -27,10 +27,15 @@ extension View {
 
 struct CustomModifiersView: View {
     var body: some View {
-        VStack(spacing: 25) {
-            Text("Hello, World!").modifier(CustomTextModifier())
+        NavigationView {
+            VStack(spacing: 25) {
+                Text("Hello, World!").modifier(CustomTextModifier())
+                
+                Text("Hello, Swift!").customText()
+            }
             
-            Text("Hello, Swift!").customText()
+            .navigationTitle("Custom Modifiers View")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

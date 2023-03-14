@@ -27,26 +27,31 @@ struct TipCalculatorView: View {
     }
     
     var body: some View {
-        Form {
-            Section {
-                TextField("Amount", text: $checkAmount)
-                Picker("Number of people", selection: $numberOfPeople) {
-                    ForEach(2..<100) {
-                        Text("\($0) people")
+        NavigationView {
+            Form {
+                Section {
+                    TextField("Amount", text: $checkAmount)
+                    Picker("Number of people", selection: $numberOfPeople) {
+                        ForEach(2..<100) {
+                            Text("\($0) people")
+                        }
                     }
                 }
-            }
-            Section(header: Text("Сколько чаевых вы хотите оставить?")) {
-                Picker("Tip percentage", selection: $tipPercentage) {
-                    ForEach(0..<tipPercentages.count) {
-                        Text("\(self.tipPercentages[$0])%")
+                Section(header: Text("Сколько чаевых вы хотите оставить?")) {
+                    Picker("Tip percentage", selection: $tipPercentage) {
+                        ForEach(0..<tipPercentages.count, id: \.self) {
+                            Text("\(self.tipPercentages[$0])%")
+                        }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
                 }
-                .pickerStyle(SegmentedPickerStyle())
+                Section {
+                    Text("\(totalPerPerson, specifier: "%.3f")")
+                }
             }
-            Section {
-                Text("\(totalPerPerson, specifier: "%.3f")")
-            }
+            
+            .navigationTitle("Tip Calculator App")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
