@@ -10,7 +10,8 @@ import SwiftUI
 struct TabsView: View {
     let views: [(AnyView, String)] = [
         (AnyView(NavigationLinksView()), "Navigation Links"),
-        (AnyView(AppsView()), "Apps")
+        (AnyView(AppsView()), "Apps"),
+        (AnyView(SheetsView()), "Sheets")
     ]
     
     var body: some View {
