@@ -22,12 +22,12 @@ struct MemoryGame<CardContent> {
             let content = createContent(i)
             cards.append(contentsOf: [Card(content: content), Card(content: content)])
         }
-        
     }
     
     
-    struct Card {
-        var isFaceUp = false
+    struct Card: Identifiable {
+        var id = UUID()
+        var isFaceUp = true
         var isMatched = false
         var content: CardContent
     }
