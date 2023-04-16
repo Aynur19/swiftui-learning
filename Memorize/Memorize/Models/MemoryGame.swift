@@ -9,9 +9,19 @@ import Foundation
 
 
 struct MemoryGame<CardContent> {
-    var cards: [Card]
+    private(set) var cards: [Card]
     
     func choose(_ card: Card) {
+        
+    }
+    
+    init(pairsOfCards: Int, createContent: (Int) -> CardContent) {
+        cards = Array<Card>()
+        
+        for i in 0..<pairsOfCards {
+            let content = createContent(i)
+            cards.append(contentsOf: [Card(content: content), Card(content: content)])
+        }
         
     }
     
