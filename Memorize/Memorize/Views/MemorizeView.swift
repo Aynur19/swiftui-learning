@@ -17,6 +17,9 @@ struct MemorizeView: View {
                     ForEach(game.cards) { card in
                         CardView(card: card)
                             .aspectRatio(2/3, contentMode: .fit)
+                            .onTapGesture {
+                                game.choose(card)
+                            }
                     }
                 }
             }
