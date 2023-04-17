@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class EmojiMemoryGame {
+class EmojiMemoryGame: ObservableObject {
     static let emojis = ["🚐", "🚗", "🏎", "🚒", "🛵", "🚕", "🚎", "🚛", "🚑", "🚌", "🚚", "🚙", "🏍",
                          "🚓", "🛻", "🛺", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K"]
     
@@ -17,7 +17,7 @@ class EmojiMemoryGame {
         }
     }
     
-    private var model = createMemoryGame()
+    @Published private var model = createMemoryGame()
     
     var cards: [MemoryGame<String>.Card] {
         model.cards

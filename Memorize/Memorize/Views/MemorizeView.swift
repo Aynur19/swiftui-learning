@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MemorizeView: View {
-    var game: EmojiMemoryGame
+    @ObservedObject var game: EmojiMemoryGame
     
     var body: some View {
         VStack {
