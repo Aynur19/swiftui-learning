@@ -8,6 +8,7 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
+    
     static let smiles1 = ["😀", "🥹", "😅", "😂", "☺️", "😇", "🙂", "🙃", "😍", "🤪", "😎", "😪", "😴", "😵‍💫", "😷"]
     static let smiles2 = ["🤢", "😈", "👿", "🤡", "👻", "☠️", "👽", "🎃", "🤖", "👾", "💩", "👺", "👹", "💀"]
     static let cats = ["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "🙀", "😿", "😾"]
@@ -32,6 +33,8 @@ class EmojiMemoryGame: ObservableObject {
     // MARK: - Intent(s)
     func choose(_ card: MemoryGame<String>.Card) {
         model.choose(card)
+        var d = MemorizeGameData()
+        
     }
 }
 
