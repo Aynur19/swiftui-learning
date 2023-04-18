@@ -8,35 +8,35 @@
 import Foundation
 
 enum EmojiTypes {
-    case smileyFace
-    case catFaces
-    case emotion
-    case handsAndOtherBodyParts
-    case animalsAndNature
-    case foodAndDrinks
-    case travelAndPlaces
-    case transport
-    case time
-    case skyAndWeather
-    case activity
-    case awardMedals
-    case sport
-    case games
-    case artsAndCrafts
-    case clothingObjects
-    case sound
-    case musicalInstrument
-    case phoneAndComputer
-    case lightAndVideo
-    case bookAndPaper
-    case mail
-    case office
-    case lock
-    case tool
-    case science
-    case medical
-    case household
-    case zodiac
+    case smileyFace(String = "Smiley Face")
+    case catFaces(String = "Cat Face")
+    case emotion(String = "Emotion")
+    case handsAndOtherBodyParts(String = "Hands and Other Body Parts")
+    case animalsAndNature(String = "Animal and Nature")
+    case foodAndDrinks(String = "Food and Drinks")
+    case travelAndPlaces(String = "Travel and Places")
+    case transport(String = "Transport")
+    case time(String = "Time")
+    case skyAndWeather(String = "Sky and Weather")
+    case activity(String = "Activity")
+    case awardMedals(String = "Award Medals")
+    case sport(String = "Sport")
+    case games(String = "Games")
+    case artsAndCrafts(String = "Arts and Crafts")
+    case clothingObjects(String = "Clothing Objects")
+    case sound(String = "Sound")
+    case musicalInstrument(String = "Musical Instrument")
+    case phoneAndComputer(String = "Phone and Computer")
+    case lightAndVideo(String = "Light and Video")
+    case bookAndPaper(String = "Book and Paper")
+    case mail(String = "Mail")
+    case office(String = "Office")
+    case lock(String = "Lock")
+    case tool(String = "Tool")
+    case science(String = "Science")
+    case medical(String = "Medical")
+    case household(String = "Household")
+    case zodiac(String = "Zodiac")
 }
 
 class MemorizeGameData {
