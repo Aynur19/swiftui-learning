@@ -14,75 +14,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     private var currentFirstFaceUpCardIdx: Int?
     
     mutating func choose(_ card: Card) {
-        for i in 0x1F601...0x1F64F {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        print()
-        for i in 0x8400...0x8447 {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        
-        print()
-        for i in 0x9100...0x9300 {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        
-        print()
-        for i in 0x2600...0x26FF {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        
-        print()
-        for i in 0x2700...0x27BF {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        
-        print()
-        for i in 0xFE00...0xFE0F {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        
-        print()
-        for i in 0x1F018...0x1F270 {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        
-        print()
-        for i in 0x1F300...0x1F5FF {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        
-        print()
-        for i in 0x1F680...0x1F6FF {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        
-        print()
-        for i in 0x1F1E6...0x1F1FF {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        
-        print()
-        for i in 0x1F900...0x1F9FF {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
-        
-        print()
-        for i in 0x65024...0x65039 {
-            let c = String(UnicodeScalar(i) ?? "-")
-            print("\"\(c)\", ", terminator: "")
-        }
         if let idx = cards.firstIndex(where: { $0.id == card.id }),
            !cards[idx].isFaceUp,
            !cards[idx].isMatched {
@@ -113,7 +44,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             cards.append(contentsOf: [Card(content: content), Card(content: content)])
         }
     }
-    
     
     struct Card: Identifiable {
         var id = UUID()
