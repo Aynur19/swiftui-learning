@@ -8,22 +8,14 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
+    @Published private var model = createMemoryGame()
+    private static var emojis: [String] = MemorizeGameData.getEmojis(emojiType: .smileyFace())
     
-    static let smiles1 = ["😀", "🥹", "😅", "😂", "☺️", "😇", "🙂", "🙃", "😍", "🤪", "😎", "😪", "😴", "😵‍💫", "😷"]
-    static let smiles2 = ["🤢", "😈", "👿", "🤡", "👻", "☠️", "👽", "🎃", "🤖", "👾", "💩", "👺", "👹", "💀"]
-    static let cats = ["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "🙀", "😿", "😾"]
-    
-//    static let flags = []
-    static let emojis = ["😀", "🥹", "😅", "😂", "☺️", "😇", "🙂", "🙃", "😍", "🤪", "😎", "😪", "😴", "😵‍💫", "😷", "🚐", "🚗", "🏎", "🚒", "🛵", "🚕", "🚎", "🚛", "🚑", "🚌", "🚚", "🚙", "🏍",
-                         "🚓", "🛻", "🛺", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K"]
-    
-    static func createMemoryGame() -> MemoryGame<String> {
+    private static func createMemoryGame() -> MemoryGame<String> {
         MemoryGame<String>(pairsOfCards: 12) { i in
             emojis[i]
         }
     }
-    
-    @Published private var model = createMemoryGame()
     
     var cards: [MemoryGame<String>.Card] {
         model.cards
@@ -33,8 +25,6 @@ class EmojiMemoryGame: ObservableObject {
     // MARK: - Intent(s)
     func choose(_ card: MemoryGame<String>.Card) {
         model.choose(card)
-        var d = MemorizeGameData()
-        
     }
 }
 

@@ -29,7 +29,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        let card = MemoryGame<String>.Card(isFaceUp: true, content: "A")
+        let card = MemoryGame<String>.Card(content: "A")
         CardView(card: card)
     }
 }
