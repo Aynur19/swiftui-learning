@@ -8,22 +8,24 @@
 import SwiftUI
 
 class EmojiMemoryGame: ObservableObject {
-    @Published private var model = createMemoryGame()
-    private static var emojis: [String] = MemorizeGameData.getEmojis(emojiType: .smileyFace())
+    typealias Card = MemorizeGame<String>.Card
     
-    private static func createMemoryGame() -> MemoryGame<String> {
-        MemoryGame<String>(pairsOfCards: 12) { i in
+    @Published private var model = createMemoryGame()
+    private static var emojis = MemorizeGameData.getEmojis(emojiType: .smileyFace())
+    
+    private static func createMemoryGame() -> MemorizeGame<String> {
+        MemorizeGame<String>(pairsOfCards: 12) { i in
             emojis[i]
         }
     }
     
-    var cards: [MemoryGame<String>.Card] {
+    var cards: [Card] {
         model.cards
     }
     
     
     // MARK: - Intent(s)
-    func choose(_ card: MemoryGame<String>.Card) {
+    func choose(_ card: Card) {
         model.choose(card)
     }
 }

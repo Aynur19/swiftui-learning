@@ -1,5 +1,5 @@
 //
-//  CardModel.swift
+//  MemorizeGame.swift
 //  Memorize
 //
 //  Created by Aynur Nasybullin on 13.04.2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct MemoryGame<CardContent> where CardContent: Equatable {
+struct MemorizeGame<CardContent> where CardContent: Equatable {
     private(set) var cards: [Card]
     
     private var currentFirstFaceUpCardIdx: Int?
@@ -37,7 +37,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     init(pairsOfCards: Int, createContent: (Int) -> CardContent) {
-        cards = Array<Card>()
+        cards = []
         
         for i in 0..<pairsOfCards {
             let content = createContent(i)
