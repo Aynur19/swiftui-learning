@@ -11,7 +11,10 @@ import Foundation
 struct MemorizeGame<CardContent> where CardContent: Equatable {
     private(set) var cards: [Card]
     
-    private var currentFirstFaceUpCardIdx: Int?
+    private var currentFirstFaceUpCardIdx: Int? {
+        get { cards.indices.filter({ cards[$0].isFaceUp }).onlyItem }
+        set { cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) } }
+    }
     
     mutating func choose(_ card: Card) {
         if let idx = cards.firstIndex(where: { $0.id == card.id }),
@@ -23,16 +26,10 @@ struct MemorizeGame<CardContent> where CardContent: Equatable {
                     cards[potentialMatchIndex].isMatched = true
                 }
                 
-                currentFirstFaceUpCardIdx = nil
+                cards[idx].isFaceUp = true
             } else {
-                for i in cards.indices {
-                    cards[i].isFaceUp = false
-                }
-                
                 currentFirstFaceUpCardIdx = idx
             }
-
-            cards[idx].isFaceUp.toggle()
         }
     }
     
