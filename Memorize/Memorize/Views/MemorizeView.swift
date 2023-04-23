@@ -13,18 +13,26 @@ struct MemorizeView: View {
     var body: some View {
         NavigationView {
             AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
-                CardView(card)
-                    .padding(4)
-                    .onTapGesture {
-                        game.choose(card)
-                    }
+                cardView(for: card)
             }
             .foregroundColor(.red)
             .padding(.horizontal)
             .navigationTitle("Memorize")
             .navigationBarTitleDisplayMode(.inline)
         }
-        
+    }
+    
+    @ViewBuilder
+    private func cardView(for card: EmojiMemoryGame.Card) -> some View {
+        if card.isMatched && !card.isFaceUp {
+            Rectangle().opacity(0)
+        } else {
+            CardView(card)
+                .padding(4)
+                .onTapGesture {
+                    game.choose(card)
+                }
+        }
     }
 }
 
