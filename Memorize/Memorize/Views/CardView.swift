@@ -38,7 +38,7 @@ struct CardView: View {
     }
     
     private struct CardDrawingConstants {
-        static let cornerRadius: CGFloat = 20
+        static let cornerRadius: CGFloat = 10
         static let strokeWidth: CGFloat = 3
         static let geometryScale = 0.8
         static let mathedCardOpacity: Double = 0
