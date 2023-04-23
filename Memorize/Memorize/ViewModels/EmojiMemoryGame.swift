@@ -14,7 +14,7 @@ class EmojiMemoryGame: ObservableObject {
     private static var emojis = MemorizeGameData.getEmojis(emojiType: .smileyFace())
     
     private static func createMemoryGame() -> MemorizeGame<String> {
-        MemorizeGame<String>(pairsOfCards: 20) { i in
+        MemorizeGame<String>(pairsOfCards: 10) { i in
             emojis[i]
         }
     }

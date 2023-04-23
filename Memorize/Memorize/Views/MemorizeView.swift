@@ -39,6 +39,8 @@ struct MemorizeView: View {
 struct MemorizeView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiMemoryGame()
-        MemorizeView(game: game)
+        game.choose(game.cards.first!)
+        
+        return MemorizeView(game: game)
     }
 }

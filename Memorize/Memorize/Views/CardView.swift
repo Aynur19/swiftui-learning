@@ -20,14 +20,22 @@ struct CardView: View {
             ZStack {
                 let shape = RoundedRectangle(cornerRadius: CDS.cornerRadius)
                 if card.isFaceUp {
-                    shape.fill().foregroundColor(.white)
-                    shape.strokeBorder(lineWidth: CDS.strokeWidth)
-                    
-                    Text(card.content).font(font(in: geometry.size))
+                    shape
+                        .fill()
+                        .foregroundColor(.white)
+                    shape
+                        .strokeBorder(lineWidth: CDS.strokeWidth)
+                    Pie(startAngle: Angle(degrees: -90), endAngle: Angle(degrees: 115-90), clockwise: false)
+                        .padding(CDS.piePadding)
+                        .opacity(CDS.pieOpacity)
+                    Text(card.content)
+                        .font(font(in: geometry.size))
                 } else if card.isMatched {
-                    shape.opacity(CDS.mathedCardOpacity)
+                    shape
+                        .opacity(CDS.mathedCardOpacity)
                 } else {
-                    shape.fill()
+                    shape
+                        .fill()
                 }
             }
         }
@@ -40,8 +48,10 @@ struct CardView: View {
     private struct CardDrawingConstants {
         static let cornerRadius: CGFloat = 10
         static let strokeWidth: CGFloat = 3
-        static let geometryScale = 0.8
+        static let geometryScale = 0.72
         static let mathedCardOpacity: Double = 0
+        static let piePadding: CGFloat = 8
+        static let pieOpacity: Double = 0.5
     }
 }
 
