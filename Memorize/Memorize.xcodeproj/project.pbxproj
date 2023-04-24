@@ -14,6 +14,7 @@
 		981E983629F1C6A5002CC0A8 /* ArrayExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E983529F1C6A5002CC0A8 /* ArrayExtentions.swift */; };
 		981E983829F5A3B7002CC0A8 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E983729F5A3B7002CC0A8 /* AspectVGrid.swift */; };
 		981E983C29F5BA01002CC0A8 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E983B29F5BA01002CC0A8 /* Pie.swift */; };
+		981E983F29F6FB06002CC0A8 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981E983E29F6FB06002CC0A8 /* Cardify.swift */; };
 		984AEB1129E334A400D030A4 /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984AEB1029E334A400D030A4 /* MemorizeApp.swift */; };
 		984AEB1329E334A400D030A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984AEB1229E334A400D030A4 /* ContentView.swift */; };
 		984AEB1529E334A800D030A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984AEB1429E334A800D030A4 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		981E983529F1C6A5002CC0A8 /* ArrayExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtentions.swift; sourceTree = "<group>"; };
 		981E983729F5A3B7002CC0A8 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		981E983B29F5BA01002CC0A8 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		981E983E29F6FB06002CC0A8 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		984AEB0D29E334A400D030A4 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		984AEB1029E334A400D030A4 /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
 		984AEB1229E334A400D030A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
+		981E983D29F6FAEB002CC0A8 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				981E983E29F6FB06002CC0A8 /* Cardify.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		984AEB0429E334A400D030A4 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +110,7 @@
 		984AEB0F29E334A400D030A4 /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
+				981E983D29F6FAEB002CC0A8 /* Modifiers */,
 				981E983A29F5B9F5002CC0A8 /* Structs */,
 				981E983429F1C685002CC0A8 /* Extensions */,
 				981C89B329E8897F0058FEAC /* ViewModels */,
@@ -201,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				981E983F29F6FB06002CC0A8 /* Cardify.swift in Sources */,
 				981E983C29F5BA01002CC0A8 /* Pie.swift in Sources */,
 				981E983629F1C6A5002CC0A8 /* ArrayExtentions.swift in Sources */,
 				981C89B729EC674D0058FEAC /* MemorizeView.swift in Sources */,
