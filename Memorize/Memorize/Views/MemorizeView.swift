@@ -14,8 +14,6 @@ struct MemorizeView: View {
         VStack {
             gameBody
             shuffleBtn
-//            .navigationTitle("Memorize")
-//            .navigationBarTitleDisplayMode(.inline)
         }
         .padding()
     }
