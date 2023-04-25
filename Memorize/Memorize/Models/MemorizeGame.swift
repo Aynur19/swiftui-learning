@@ -33,13 +33,18 @@ struct MemorizeGame<CardContent> where CardContent: Equatable {
         }
     }
     
+    mutating func shuffle() {
+        cards.shuffle()
+    }
+    
     init(pairsOfCards: Int, createContent: (Int) -> CardContent) {
         cards = []
-        
         for i in 0..<pairsOfCards {
             let content = createContent(i)
             cards.append(contentsOf: [Card(content: content), Card(content: content)])
         }
+        
+        shuffle()
     }
     
     struct Card: Identifiable {

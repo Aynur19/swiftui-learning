@@ -11,15 +11,28 @@ struct MemorizeView: View {
     @ObservedObject var game: EmojiMemoryGame
     
     var body: some View {
-//        NavigationView {
-            AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
-                cardView(for: card)
-            }
-            .foregroundColor(.red)
-            .padding(.horizontal)
+        VStack {
+            gameBody
+            shuffleBtn
 //            .navigationTitle("Memorize")
 //            .navigationBarTitleDisplayMode(.inline)
-//        }
+        }
+        .padding()
+    }
+    
+    var gameBody: some View {
+        AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
+            cardView(for: card)
+        }
+        .foregroundColor(.red)
+    }
+    
+    var shuffleBtn: some View {
+        Button("Shuffle") {
+            withAnimation(.easeInOut(duration: 1)) {
+                game.shuffle()
+            }
+        }
     }
     
     @ViewBuilder
