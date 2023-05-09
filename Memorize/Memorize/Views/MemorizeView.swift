@@ -22,6 +22,14 @@ struct MemorizeView: View {
         AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
             cardView(for: card)
         }
+        .onAppear {
+            // "deal" cards
+            withAnimation {
+                for card in game.cards {
+                    deal(card)
+                }
+            }
+        }
         .foregroundColor(.red)
     }
     
@@ -33,14 +41,24 @@ struct MemorizeView: View {
         }
     }
     
+    @State private var dealt = Set<UUID>()
+    
+    private func deal(_ card: EmojiMemoryGame.Card) {
+        dealt.insert(card.id)
+    }
+    
+    private func isUndealt(_ card: EmojiMemoryGame.Card) -> Bool {
+        return !dealt.contains(card.id)
+    }
+    
     @ViewBuilder
     private func cardView(for card: EmojiMemoryGame.Card) -> some View {
-        if card.isMatched && !card.isFaceUp {
+        if isUndealt(card) || card.isMatched && !card.isFaceUp {
             Rectangle().opacity(0)
         } else {
             CardView(card)
                 .padding(4)
-                .transition(AnyTransition.scale)
+                .transition(AnyTransition.asymmetric(insertion: .scale, removal: .opacity).animation(.easeInOut(duration: 1)))
                 .onTapGesture {
                     withAnimation(.easeInOut(duration: 1)) {
                         game.choose(card)
