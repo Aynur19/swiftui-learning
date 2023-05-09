@@ -40,6 +40,7 @@ struct MemorizeView: View {
         } else {
             CardView(card)
                 .padding(4)
+                .transition(AnyTransition.scale)
                 .onTapGesture {
                     withAnimation(.easeInOut(duration: 1)) {
                         game.choose(card)
