@@ -13,6 +13,7 @@ struct MemorizeView: View {
     var body: some View {
         VStack {
             gameBody
+            deckBody
             shuffleBtn
         }
         .padding()
@@ -24,12 +25,23 @@ struct MemorizeView: View {
         }
         .onAppear {
             // "deal" cards
-            withAnimation {
+            withAnimation(.easeInOut(duration: 1)) {
                 for card in game.cards {
                     deal(card)
                 }
             }
         }
+        .foregroundColor(.red)
+    }
+    
+    var deckBody: some View {
+        ZStack {
+            ForEach(game.cards.filter(isUndealt)) { card in
+                CardView(card)
+                    .transition(AnyTransition.asymmetric(insertion: .opacity, removal: .scale))
+            }
+        }
+        .frame(width: CardConstants.undealtWidth, height: CardConstants.undealtHeight)
         .foregroundColor(.red)
     }
     
@@ -58,13 +70,19 @@ struct MemorizeView: View {
         } else {
             CardView(card)
                 .padding(4)
-                .transition(AnyTransition.asymmetric(insertion: .scale, removal: .opacity).animation(.easeInOut(duration: 1)))
+                .transition(AnyTransition.asymmetric(insertion: .scale, removal: .opacity))
                 .onTapGesture {
                     withAnimation(.easeInOut(duration: 1)) {
                         game.choose(card)
                     }
                 }
         }
+    }
+    
+    private struct CardConstants {
+        static let aspectRatio: CGFloat = 2/3
+        static let undealtHeight: CGFloat = 90
+        static let undealtWidth = undealtHeight * aspectRatio
     }
 }
 
