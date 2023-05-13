@@ -31,17 +31,16 @@ struct MemorizeView: View {
         ZStack {
             ForEach(game.cards.filter(isUndealt)) { card in
                 CardView(card)
-                
                     .matchedGeometryEffect(id: card.id, in: dealingNamespace)
-                    .transition(AnyTransition.asymmetric(insertion: .opacity, removal: .scale))
+                    .transition(AnyTransition.asymmetric(insertion: .opacity, removal: .identity))
             }
         }
         .frame(width: CardConstants.undealtWidth, height: CardConstants.undealtHeight)
         .foregroundColor(.red)
         .onTapGesture {
             // "deal" cards
-            withAnimation(.easeInOut(duration: 1)) {
-                for card in game.cards {
+            for card in game.cards {
+                withAnimation(dealAnimation(for: card)) {
                     deal(card)
                 }
             }
@@ -66,6 +65,15 @@ struct MemorizeView: View {
         return !dealt.contains(card.id)
     }
     
+    private func dealAnimation(for card: EmojiMemoryGame.Card) -> Animation {
+        var delay = 0.0
+        if let index = game.cards.firstIndex(where: { $0.id == card.id }) {
+            delay = Double(index + 1)
+        }
+        
+        return Animation.easeInOut(duration: 1).delay(delay)
+    }
+    
     @ViewBuilder
     private func cardView(for card: EmojiMemoryGame.Card) -> some View {
         if isUndealt(card) || card.isMatched && !card.isFaceUp {
@@ -74,7 +82,7 @@ struct MemorizeView: View {
             CardView(card)
                 .matchedGeometryEffect(id: card.id, in: dealingNamespace)
                 .padding(4)
-                .transition(AnyTransition.asymmetric(insertion: .scale, removal: .opacity))
+                .transition(AnyTransition.asymmetric(insertion: .identity, removal: .opacity))
                 .onTapGesture {
                     withAnimation(.easeInOut(duration: 1)) {
                         game.choose(card)
