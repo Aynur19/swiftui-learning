@@ -23,14 +23,6 @@ struct MemorizeView: View {
         AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
             cardView(for: card)
         }
-        .onAppear {
-            // "deal" cards
-            withAnimation(.easeInOut(duration: 1)) {
-                for card in game.cards {
-                    deal(card)
-                }
-            }
-        }
         .foregroundColor(.red)
     }
     
@@ -43,6 +35,14 @@ struct MemorizeView: View {
         }
         .frame(width: CardConstants.undealtWidth, height: CardConstants.undealtHeight)
         .foregroundColor(.red)
+        .onTapGesture {
+            // "deal" cards
+            withAnimation(.easeInOut(duration: 1)) {
+                for card in game.cards {
+                    deal(card)
+                }
+            }
+        }
     }
     
     var shuffleBtn: some View {
