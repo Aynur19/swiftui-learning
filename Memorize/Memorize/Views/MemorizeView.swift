@@ -11,6 +11,8 @@ struct MemorizeView: View {
     @ObservedObject var game: EmojiMemoryGame
     @Namespace private var dealingNamespace
     
+    private typealias Consts = CardConstants
+    
     var body: some View {
         VStack {
             gameBody
@@ -21,7 +23,7 @@ struct MemorizeView: View {
     }
     
     var gameBody: some View {
-        AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
+        AspectVGrid(items: game.cards, aspectRatio: Consts.aspectRatio) { card in
             cardView(for: card)
         }
         .foregroundColor(.red)
@@ -35,7 +37,7 @@ struct MemorizeView: View {
                     .transition(AnyTransition.asymmetric(insertion: .opacity, removal: .identity))
             }
         }
-        .frame(width: CardConstants.undealtWidth, height: CardConstants.undealtHeight)
+        .frame(width: CardConstants.undealtWidth, height: Consts.undealtHeight)
         .foregroundColor(.red)
         .onTapGesture {
             // "deal" cards
@@ -49,7 +51,7 @@ struct MemorizeView: View {
     
     var shuffleBtn: some View {
         Button("Shuffle") {
-            withAnimation(.easeInOut(duration: 1)) {
+            withAnimation(.easeInOut(duration: Consts.shuffleDuration)) {
                 game.shuffle()
             }
         }
@@ -68,23 +70,25 @@ struct MemorizeView: View {
     private func dealAnimation(for card: EmojiMemoryGame.Card) -> Animation {
         var delay = 0.0
         if let index = game.cards.firstIndex(where: { $0.id == card.id }) {
-            delay = Double(index + 1)
+            delay = Double(index) * (Consts.totalDistributionDuration / Double(game.cards.count))
         }
         
-        return Animation.easeInOut(duration: 1).delay(delay)
+        return Animation
+            .easeInOut(duration: Consts.distributionDuration)
+            .delay(delay)
     }
     
     @ViewBuilder
     private func cardView(for card: EmojiMemoryGame.Card) -> some View {
         if isUndealt(card) || card.isMatched && !card.isFaceUp {
-            Rectangle().opacity(0)
+            Rectangle().opacity(Consts.undealtOpacity)
         } else {
             CardView(card)
                 .matchedGeometryEffect(id: card.id, in: dealingNamespace)
-                .padding(4)
+                .padding(Consts.cardViewPadding)
                 .transition(AnyTransition.asymmetric(insertion: .identity, removal: .opacity))
                 .onTapGesture {
-                    withAnimation(.easeInOut(duration: 1)) {
+                    withAnimation(.easeInOut(duration: Consts.undealtDuration)) {
                         game.choose(card)
                     }
                 }
@@ -95,6 +99,12 @@ struct MemorizeView: View {
         static let aspectRatio: CGFloat = 2/3
         static let undealtHeight: CGFloat = 90
         static let undealtWidth = undealtHeight * aspectRatio
+        static let undealtOpacity = 0.0
+        static let cardViewPadding: CGFloat = 4
+        static let undealtDuration = 1.0
+        static let distributionDuration = 1.0
+        static let shuffleDuration = 1.0
+        static let totalDistributionDuration = 5.0
     }
 }
 
