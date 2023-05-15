@@ -23,7 +23,9 @@ struct CardView: View {
                     .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false), value: card.isMatched)
                     .font(Font.system(size: CDS.fontSize))
                     .scaleEffect(fontScale(thatFits: geometry.size))
-                Pie(startAngle: Angle(degrees: -90), endAngle: Angle(degrees: 115-90), clockwise: false)
+                Pie(startAngle: Angle(degrees: -90),
+                    endAngle: Angle(degrees: (1 - card.bonusTimeRemaining) * 360 - 90),
+            clockwise: false)
                     .padding(CDS.piePadding)
                     .opacity(CDS.pieOpacity)
             }
