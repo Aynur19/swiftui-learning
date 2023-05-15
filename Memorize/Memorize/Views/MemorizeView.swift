@@ -59,7 +59,12 @@ struct MemorizeView: View {
         VStack {
             gameBody
             deckBody
-            shuffleBtn
+            
+            HStack {
+                shuffleBtn
+                Spacer()
+                restartBtn
+            }
         }
         .padding()
     }
@@ -100,6 +105,14 @@ struct MemorizeView: View {
         }
     }
     
+    var restartBtn: some View {
+        Button("Restart") {
+            withAnimation {
+                dealt = []
+                //game.restart()
+            }
+        }
+    }
 
     
     private struct CardConstants {
