@@ -56,15 +56,17 @@ struct MemorizeView: View {
     }
     
     var body: some View {
-        VStack {
-            gameBody
-            deckBody
-            
-            HStack {
-                shuffleBtn
-                Spacer()
-                restartBtn
+        ZStack(alignment: .bottom) {
+            VStack {
+                gameBody
+                HStack {
+                    shuffleBtn
+                    Spacer()
+                    restartBtn
+                }
+                .padding(.horizontal)
             }
+            deckBody
         }
         .padding()
     }
