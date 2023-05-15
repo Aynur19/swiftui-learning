@@ -8,10 +8,52 @@
 import SwiftUI
 
 struct MemorizeView: View {
+    private typealias Consts = CardConstants
+
     @ObservedObject var game: EmojiMemoryGame
     @Namespace private var dealingNamespace
+    @State private var dealt = Set<UUID>()
     
-    private typealias Consts = CardConstants
+    private func deal(_ card: EmojiMemoryGame.Card) {
+        dealt.insert(card.id)
+    }
+    
+    private func isUndealt(_ card: EmojiMemoryGame.Card) -> Bool {
+        return !dealt.contains(card.id)
+    }
+    
+    private func dealAnimation(for card: EmojiMemoryGame.Card) -> Animation {
+        var delay = 0.0
+        if let index = game.cards.firstIndex(where: { $0.id == card.id }) {
+            delay = Double(index) * (Consts.totalDistributionDuration / Double(game.cards.count))
+        }
+        
+        return Animation
+            .easeInOut(duration: Consts.distributionDuration)
+            .delay(delay)
+    }
+    
+    private func zIndex(of card: EmojiMemoryGame.Card) -> Double {
+        -Double(game.cards.firstIndex(where: { $0.id == card.id }) ?? 0)
+    }
+    
+    @ViewBuilder
+    private func cardView(for card: EmojiMemoryGame.Card) -> some View {
+        if isUndealt(card) || card.isMatched && !card.isFaceUp {
+            Rectangle().opacity(Consts.undealtOpacity)
+        } else {
+            CardView(card)
+                .matchedGeometryEffect(id: card.id, in: dealingNamespace)
+                .padding(Consts.cardViewPadding)
+                .transition(AnyTransition.asymmetric(insertion: .identity, removal: .opacity))
+                .zIndex(zIndex(of: card))
+                .onTapGesture {
+                    withAnimation(.easeInOut(duration: Consts.undealtDuration)) {
+                        game.choose(card)
+                    }
+                }
+        }
+    }
     
     var body: some View {
         VStack {
@@ -35,6 +77,7 @@ struct MemorizeView: View {
                 CardView(card)
                     .matchedGeometryEffect(id: card.id, in: dealingNamespace)
                     .transition(AnyTransition.asymmetric(insertion: .opacity, removal: .identity))
+                    .zIndex(zIndex(of: card))
             }
         }
         .frame(width: CardConstants.undealtWidth, height: Consts.undealtHeight)
@@ -57,43 +100,7 @@ struct MemorizeView: View {
         }
     }
     
-    @State private var dealt = Set<UUID>()
-    
-    private func deal(_ card: EmojiMemoryGame.Card) {
-        dealt.insert(card.id)
-    }
-    
-    private func isUndealt(_ card: EmojiMemoryGame.Card) -> Bool {
-        return !dealt.contains(card.id)
-    }
-    
-    private func dealAnimation(for card: EmojiMemoryGame.Card) -> Animation {
-        var delay = 0.0
-        if let index = game.cards.firstIndex(where: { $0.id == card.id }) {
-            delay = Double(index) * (Consts.totalDistributionDuration / Double(game.cards.count))
-        }
-        
-        return Animation
-            .easeInOut(duration: Consts.distributionDuration)
-            .delay(delay)
-    }
-    
-    @ViewBuilder
-    private func cardView(for card: EmojiMemoryGame.Card) -> some View {
-        if isUndealt(card) || card.isMatched && !card.isFaceUp {
-            Rectangle().opacity(Consts.undealtOpacity)
-        } else {
-            CardView(card)
-                .matchedGeometryEffect(id: card.id, in: dealingNamespace)
-                .padding(Consts.cardViewPadding)
-                .transition(AnyTransition.asymmetric(insertion: .identity, removal: .opacity))
-                .onTapGesture {
-                    withAnimation(.easeInOut(duration: Consts.undealtDuration)) {
-                        game.choose(card)
-                    }
-                }
-        }
-    }
+
     
     private struct CardConstants {
         static let aspectRatio: CGFloat = 2/3
