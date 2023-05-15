@@ -11,6 +11,8 @@ struct CardView: View {
     private typealias CDS = CardDrawingConstants
     private let card: EmojiMemoryGame.Card
     
+    @State private var animatedBonusRemaining: Double = 0
+    
     init(_ card: EmojiMemoryGame.Card) {
         self.card = card
     }
@@ -23,11 +25,26 @@ struct CardView: View {
                     .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false), value: card.isMatched)
                     .font(Font.system(size: CDS.fontSize))
                     .scaleEffect(fontScale(thatFits: geometry.size))
-                Pie(startAngle: Angle(degrees: -90),
-                    endAngle: Angle(degrees: (1 - card.bonusTimeRemaining) * 360 - 90),
-            clockwise: false)
-                    .padding(CDS.piePadding)
-                    .opacity(CDS.pieOpacity)
+                
+                Group {
+                    if card.isConsumingBonusTime {
+                        Pie(startAngle: Angle(degrees: -90),
+                            endAngle: Angle(degrees: (1 - animatedBonusRemaining) * 360 - 90),
+                            clockwise: false)
+                        .onAppear {
+                            animatedBonusRemaining = card.bonusRemaining
+                            withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+                                animatedBonusRemaining = 0
+                            }
+                        }
+                    } else {
+                        Pie(startAngle: Angle(degrees: -90),
+                            endAngle: Angle(degrees: (1 - card.bonusTimeRemaining) * 360 - 90),
+                            clockwise: false)
+                    }
+                }
+                .padding(CDS.piePadding)
+                .opacity(CDS.pieOpacity)
             }
             .cardify(isFaceUp: card.isFaceUp)
         }

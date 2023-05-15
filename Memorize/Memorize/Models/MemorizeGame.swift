@@ -85,7 +85,7 @@ struct MemorizeGame<CardContent> where CardContent: Equatable {
         }
         
         // percentage of the bonus time remaining
-        var bonusRemainig: Double {
+        var bonusRemaining: Double {
             (bonusTimeLimit > 0 && bonusTimeRemaining > 0) ? bonusTimeRemaining / bonusTimeLimit : 0
         }
         
@@ -95,13 +95,13 @@ struct MemorizeGame<CardContent> where CardContent: Equatable {
         }
         
         // wether we are currently face up, unmatched and have not yet used up the bonus window
-        var isComingBonusTime: Bool {
+        var isConsumingBonusTime: Bool {
             isFaceUp && !isMatched && bonusTimeRemaining > 0
         }
         
         // called when the transitions to face up state
         private mutating func startUsingBonusTime() {
-            if isComingBonusTime, lastFaceUpDate == nil {
+            if isConsumingBonusTime, lastFaceUpDate == nil {
                 lastFaceUpDate = Date()
             }
         }
