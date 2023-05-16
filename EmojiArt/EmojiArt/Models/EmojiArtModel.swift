@@ -30,12 +30,6 @@ struct EmojiArtModel {
         }
     }
     
-    enum Background {
-        case blank
-        case url
-        case imageData
-    }
-    
     mutating func addEmoji(_ content: String, at location: (x: Int, y: Int), size: Int) {
         uniqueEmojiId += 1
         emojis.append(Emoji(content: content, x: location.x, y: location.y, size: size, id: uniqueEmojiId))

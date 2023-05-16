@@ -12,6 +12,7 @@
 		98869CE72A13FC2D00CF4446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98869CE62A13FC2D00CF4446 /* Assets.xcassets */; };
 		98869CEA2A13FC2D00CF4446 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98869CE92A13FC2D00CF4446 /* Preview Assets.xcassets */; };
 		98869CF22A14044D00CF4446 /* EmojiArtModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98869CF12A14044D00CF4446 /* EmojiArtModel.swift */; };
+		98869CF42A140A1200CF4446 /* EmojiArtModel.Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98869CF32A140A1200CF4446 /* EmojiArtModel.Background.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		98869CE62A13FC2D00CF4446 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98869CE92A13FC2D00CF4446 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98869CF12A14044D00CF4446 /* EmojiArtModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtModel.swift; sourceTree = "<group>"; };
+		98869CF32A140A1200CF4446 /* EmojiArtModel.Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtModel.Background.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				98869CF12A14044D00CF4446 /* EmojiArtModel.swift */,
+				98869CF32A140A1200CF4446 /* EmojiArtModel.Background.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				98869CE52A13FC2B00CF4446 /* ContentView.swift in Sources */,
 				98869CE32A13FC2B00CF4446 /* EmojiArtApp.swift in Sources */,
 				98869CF22A14044D00CF4446 /* EmojiArtModel.swift in Sources */,
+				98869CF42A140A1200CF4446 /* EmojiArtModel.Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
