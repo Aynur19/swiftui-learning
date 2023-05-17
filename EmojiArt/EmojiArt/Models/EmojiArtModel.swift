@@ -14,7 +14,7 @@ struct EmojiArtModel {
     
     init() { }
     
-    struct Emoji {
+    struct Emoji: Identifiable, Hashable {
         let content: String
         var x: Int
         var y: Int
