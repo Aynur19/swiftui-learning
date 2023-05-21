@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class EmojiArtDocument {
+class EmojiArtDocument: ObservableObject {
     @Published private(set) var emojiArt: EmojiArtModel
     
     init() {
