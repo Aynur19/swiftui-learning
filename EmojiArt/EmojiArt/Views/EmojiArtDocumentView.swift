@@ -10,11 +10,38 @@ import SwiftUI
 struct EmojiArtDocumentView: View {
     @ObservedObject var document: EmojiArtDocument
     
+    let defaultFontSize: CGFloat = 40
+    
     var body: some View {
-        VStack {
-            Text("Hello, world!")
+        VStack(spacing: 0) {
+            documentBody
+            palette
         }
-        .padding()
+    }
+    
+    var documentBody: some View {
+        Color.green
+    }
+    
+    var palette: some View {
+        ScrollingEmojisView(emojis: testEmojis)
+            .font(.system(size: defaultFontSize))
+    }
+    
+    let testEmojis =  "🙂😀😃😄😁😅😆🤣😂🙃😉😊😇😎🤓🧐🥳🥰😍🤩😘😗😚😙🥲😋😛😜🤪😝🤑🤗🤭🤫🤔😐🤐🤨😑😶😏😒🙄😬🤥😪😴😌😔🤤😷🤒🤕🤢🤮🤧🥵🥶🥴😵🤯😕😟🙁😮😯😲😳🥺😦😧😨😰😥😢😭😱😖😣😞😓😩😫🥱😤😡😠🤬😈👿💀💩🤡👹👺👻👽👾🤖"
+}
+
+struct ScrollingEmojisView: View {
+    let emojis: String
+    
+    var body: some View{
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach(emojis.map({ String($0) }), id: \.self) { emoji in
+                    Text(emoji)
+                }
+            }
+        }
     }
 }
 
