@@ -12,6 +12,8 @@ class EmojiArtDocument: ObservableObject {
     
     init() {
         emojiArt = EmojiArtModel()
+        emojiArt.addEmoji("1", at: (-400, 0), size: 80)
+        emojiArt.addEmoji("9", at: (0, 400), size: 120)
     }
     
     var emojis: [EmojiArtModel.Emoji] { emojiArt.emojis }
