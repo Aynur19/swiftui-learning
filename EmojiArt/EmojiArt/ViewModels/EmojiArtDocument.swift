@@ -23,6 +23,7 @@ class EmojiArtDocument: ObservableObject {
     // MARK: - Intents
     func setBackground(_ background: EmojiArtModel.Background) {
         emojiArt.background = background
+        print("background set to \(background)")
     }
     
     func addEmoji(_ content: String, at location: (x: Int, y: Int), size: CGFloat) {
