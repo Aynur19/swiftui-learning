@@ -105,7 +105,13 @@ struct EmojiArtDocumentView: View {
     private func doubleTapToZoom(in size: CGSize) -> some Gesture {
         TapGesture(count: 2)
             .onEnded {
-                zoomToFit(document.backgroundImage, in: size)
+                withAnimation {
+                    if zoomScale == 1 {
+                        zoomToFit(document.backgroundImage, in: size)
+                    } else {
+                        zoomScale = 1
+                    }
+                }
             }
     }
     
