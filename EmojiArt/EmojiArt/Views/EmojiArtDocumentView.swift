@@ -22,7 +22,10 @@ struct EmojiArtDocumentView: View {
     var documentBody: some View {
         GeometryReader { geometry in
             ZStack {
-                Color.green
+                Color.white.overlay(
+                    OptionalImageView(uiImage: document.backgroundImage)
+                        .position(convertFromEmojiCoordinates((0, 0), in: geometry))
+                )
                 ForEach(document.emojis) { emoji in
                     Text(emoji.content)
                         .font(.system(size: fontSize(for: emoji)))

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9832C1B72A23CB4900B6FEEC /* OptionalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9832C1B62A23CB4900B6FEEC /* OptionalImageView.swift */; };
 		98869CE32A13FC2B00CF4446 /* EmojiArtApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98869CE22A13FC2B00CF4446 /* EmojiArtApp.swift */; };
 		98869CE52A13FC2B00CF4446 /* EmojiArtDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98869CE42A13FC2B00CF4446 /* EmojiArtDocumentView.swift */; };
 		98869CE72A13FC2D00CF4446 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98869CE62A13FC2D00CF4446 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9832C1B62A23CB4900B6FEEC /* OptionalImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalImageView.swift; sourceTree = "<group>"; };
 		98869CDF2A13FC2A00CF4446 /* EmojiArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98869CE22A13FC2B00CF4446 /* EmojiArtApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtApp.swift; sourceTree = "<group>"; };
 		98869CE42A13FC2B00CF4446 /* EmojiArtDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtDocumentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				98869CE42A13FC2B00CF4446 /* EmojiArtDocumentView.swift */,
+				9832C1B62A23CB4900B6FEEC /* OptionalImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9832C1B72A23CB4900B6FEEC /* OptionalImageView.swift in Sources */,
 				98869CE52A13FC2B00CF4446 /* EmojiArtDocumentView.swift in Sources */,
 				98869CFA2A1545A100CF4446 /* Extensions.swift in Sources */,
 				98869CE32A13FC2B00CF4446 /* EmojiArtApp.swift in Sources */,
