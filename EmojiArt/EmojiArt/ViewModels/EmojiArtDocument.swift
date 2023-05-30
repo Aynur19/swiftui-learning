@@ -8,18 +8,17 @@
 import SwiftUI
 
 class EmojiArtDocument: ObservableObject {
+    
+    init() {
+        emojiArt = EmojiArtModel()
+    }
+    
     @Published private(set) var emojiArt: EmojiArtModel {
         didSet {
             if emojiArt.background != oldValue.background {
                 updateBackgroundImageData()
             }
         }
-    }
-    
-    init() {
-        emojiArt = EmojiArtModel()
-        emojiArt.addEmoji("1", at: (-400, 0), size: 80)
-        emojiArt.addEmoji("9", at: (0, 400), size: 120)
     }
     
     var emojis: [EmojiArtModel.Emoji] { emojiArt.emojis }
@@ -31,6 +30,7 @@ class EmojiArtDocument: ObservableObject {
         case idle
         case fetching
     }
+    
     @Published var backgroundFetchStatus = BackgroundFetchStatus.idle
     
     private func updateBackgroundImageData() {
@@ -61,7 +61,6 @@ class EmojiArtDocument: ObservableObject {
     // MARK: - Intents
     func setBackground(_ background: EmojiArtModel.Background) {
         emojiArt.background = background
-        print("background set to \(background)")
     }
     
     func addEmoji(_ content: String, at location: (x: Int, y: Int), size: CGFloat) {

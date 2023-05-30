@@ -21,6 +21,7 @@
 		98869CF42A140A1200CF4446 /* EmojiArtModel.Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98869CF32A140A1200CF4446 /* EmojiArtModel.Background.swift */; };
 		98869CF72A1540B800CF4446 /* EmojiArtDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98869CF62A1540B800CF4446 /* EmojiArtDocument.swift */; };
 		98869CFA2A1545A100CF4446 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98869CF92A1545A100CF4446 /* ArrayExt.swift */; };
+		98DB439C2A268438002FD7B7 /* ScrollingEmojisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DB439B2A268438002FD7B7 /* ScrollingEmojisView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		98869CF32A140A1200CF4446 /* EmojiArtModel.Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtModel.Background.swift; sourceTree = "<group>"; };
 		98869CF62A1540B800CF4446 /* EmojiArtDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtDocument.swift; sourceTree = "<group>"; };
 		98869CF92A1545A100CF4446 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
+		98DB439B2A268438002FD7B7 /* ScrollingEmojisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingEmojisView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				98869CE42A13FC2B00CF4446 /* EmojiArtDocumentView.swift */,
 				9832C1B62A23CB4900B6FEEC /* OptionalImageView.swift */,
+				98DB439B2A268438002FD7B7 /* ScrollingEmojisView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			files = (
 				9832C1B72A23CB4900B6FEEC /* OptionalImageView.swift in Sources */,
 				98869CE52A13FC2B00CF4446 /* EmojiArtDocumentView.swift in Sources */,
+				98DB439C2A268438002FD7B7 /* ScrollingEmojisView.swift in Sources */,
 				9832C1BD2A2674EB00B6FEEC /* CGRectExt.swift in Sources */,
 				9832C1C32A2675B200B6FEEC /* URLExt.swift in Sources */,
 				98869CFA2A1545A100CF4446 /* ArrayExt.swift in Sources */,
